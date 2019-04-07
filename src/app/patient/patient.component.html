@@ -1,0 +1,35 @@
+<table mdbTable striped="true"  responsive="true">
+  <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Contact Number</th>
+        <th>Next of Kin</th>
+        <th>Next of Kin Contact Number</th>
+        <th>Allergies</th>
+        <th>Other Details</th>
+        <th>Associated Doctor Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let patient of patients">
+      <td>{{patient.Patient_Id}}</td>
+      <td>{{patient.Patient_Name}}</td>
+      <td>{{patient.Patient_Gender}}</td>
+      <td>{{patient.Patient_Date_Of_Birth}}</td>
+      <td>{{patient.Patient_Age}}</td>
+      <td>{{patient.Patient_Address}}</td>
+      <td>{{patient.Patient_Contact_Number}}</td>
+      <td>{{patient.Patient_Next_Of_Kin}}</td>
+      <td>{{patient.Patient_Next_Of_Kin_Contact_Number}}</td>
+      <td>{{patient.Patient_Allergies}}</td>
+      <td>{{patient.Patient_Other_Details}}</td>
+      <td>{{patient.Patient_Doctor_Id}}</td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-secondary btn-rounded" ripple-radius>View My Appointments</a>
