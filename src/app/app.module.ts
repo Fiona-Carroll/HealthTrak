@@ -16,6 +16,12 @@ import { RegisterComponent } from './register/register.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { PatientComponent } from './patient/patient.component';
 import { AdminComponent } from './admin/admin.component';
+import { PatientDetailComponent } from './patient-detail/patient-detail.component';
+import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
+import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
+import { CreatePatientComponent } from './create-patient/create-patient.component';
+import { CreateDoctorComponent } from './create-doctor/create-doctor.component';
+import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
 
 
 @NgModule({
@@ -30,6 +36,12 @@ import { AdminComponent } from './admin/admin.component';
     DoctorComponent,
     PatientComponent,
     AdminComponent,
+    PatientDetailComponent,
+    DoctorDetailComponent,
+    AppointmentDetailComponent,
+    CreatePatientComponent,
+    CreateDoctorComponent,
+    CreateAppointmentComponent,
   
   ],
   imports: [

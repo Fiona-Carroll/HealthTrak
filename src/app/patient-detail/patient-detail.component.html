@@ -1,0 +1,106 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-3">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/patient" routerLinkActive="active">Back</button>
+    </div>
+    <div class = "col-md-3">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/appointment', patientDetail.Patient_Id]" routerLinkActive="active">Appointments</button>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-12">
+      <!-- Default form register -->
+      <form class="text-center border border-light p-5 myCustom">
+
+        <p class="h4 mb-4">Patient Details</p>
+
+
+
+        <div class="form-row mb-4">
+            <div class="col">
+                <!-- PPS Number -->
+                <input type="text" id="defaultRegisterFormPPSNumber" class="form-control" placeholder="PPS Number" aria-describedby="defaultRegisterFormPPSNumberHelpBlock" [(ngModel)]="patientDetail.Patient_Id" name="Patient_Id" [disabled]="isRead">
+                <small id="defaultRegisterFormPPSNumberHelpBlock" class="form-text text-muted mb-4">
+                   PPS Number Required. Example format: 7293728R
+                  </small>
+              </div>
+            <div class="col">
+              <!-- Full Name -->
+              <input type="text" id="defaultRegisterFormFullName" class="form-control" placeholder="Full Name" aria-describedby="defaultRegisterFormFullNameHelpBlock"  [(ngModel)]="patientDetail.Patient_Name" name="Patient_Name" [disabled]="isRead">
+              <small id="defaultRegisterFormFullNameHelpBlock" class="form-text text-muted mb-4">
+                  Full name required. Example format: Mary Healy
+                </small>
+            </div>
+          </div>
+
+        <div class="form-row mb-4">
+        <div class = "col">
+          <!-- Date Of Birth -->
+          <input type="dateofbirth" id="defaultRegisterFormDateOfBirth" class="form-control" placeholder="Date of Birth" aria-describedby="defaultRegisterFormDateOfBirthHelpBlock" [(ngModel)]="patientDetail.Patient_Date_Of_Birth" name="Patient_Date_Of_Birth" [disabled]="isRead">
+          <small id="defaultRegisterFormDateOfBirthHelpBlock" class="form-text text-muted mb-4">
+            Date of birth must be in the format DD/MM/YYYY
+          </small>
+        </div>
+        <div class = "col">
+          <!-- Age -->
+          <input type="age" id="defaultRegisterFormAge" class="form-control" placeholder="Age" aria-describedby="defaultRegisterFormAgeHelpBlock" [(ngModel)]="patientDetail.Patient_Age" name="Patient_Age" [disabled]="isRead">
+          <small id="defaultRegisterFormAgeHelpBlock" class="form-text text-muted mb-4">
+            Age must be in numeric format only
+          </small>
+        </div>
+      </div>
+
+      <!-- Address Line 1 -->
+      <input type="addressFirstLine" id="defaultRegisterFormAddressFirstLine" class="form-control" placeholder="Address Line 1" aria-describedby="defaultRegisterFormAddressFirstLineHelpBlock" [(ngModel)]="patientDetail.Patient_Address" name="Patient_Address" [disabled]="isRead">
+      <small id="defaultRegisterFormAddressFirstLineHelpBlock" class="form-text text-muted mb-4">
+        First Line Of Address
+      </small>
+
+
+        <div class="form-row mb-4">
+            <div class="col">
+                <!-- Contact Number -->
+                <input type="text" id="defaultRegisterFormContactNumber" class="form-control" placeholder="Contact Number" aria-describedby="defaultRegisterFormContactNumberHelpBlock" [(ngModel)]="patientDetail.Patient_Contact_Number" name="Patient_Contact_Number" [disabled]="isRead">
+              </div>
+            <div class="col">
+              <!-- Next Of Kin -->
+              <input type="text" id="defaultRegisterFormNextOfKin" class="form-control" placeholder="Next Of Kin" aria-describedby="defaultRegisterFormNextOfKinHelpBlock" [(ngModel)]="patientDetail.Patient_Next_Of_Kin" name="Patient_Next_Of_Kin" [disabled]="isRead">
+            </div>
+            <div class="col">
+              <!-- Next Of Kin Contact Number -->
+              <input type="text" id="defaultRegisterFormNextOfKinContactNumber" class="form-control" placeholder="Next of Kin Contact Number" aria-describedby="defaultRegisterFormNextOfKinContactNumberHelpBlock" [(ngModel)]="patientDetail.Patient_Next_Of_Kin_Contact_Number" name="Patient_Next_Of_Kin_Contact_Number" [disabled]="isRead">
+            </div>
+          </div>
+
+          <div class="form-row mb-4">
+              <div class="col">
+                  <!-- Allergies -->
+                  <input type="text" id="defaultRegisterFormAllergies" class="form-control" placeholder="Allergies" aria-describedby="defaultRegisterFormAllergiesHelpBlock"[(ngModel)]="patientDetail.Patient_Allergies" name="Patient_Allergies" [disabled]="isRead">
+                </div>
+              <div class="col">
+                <!-- Other Details -->
+                <input type="text" id="defaultRegisterFormOtherDetails" class="form-control" placeholder="Other Details" aria-describedby="defaultRegisterFormOtherDetailsHelpBlock" [(ngModel)]="patientDetail.Patient_Other_Details" name="Patient_Other_Details" [disabled]="isRead">
+
+              </div>
+              <div class="col">
+                <!-- Associated Doctor Id -->
+                <input type="text" id="defaultRegisterFormAssociatedDoctorId" class="form-control" placeholder="Associated Doctor Id" aria-describedby="defaultRegisterFormAssociatedDoctorIdHelpBlock" [(ngModel)]="patientDetail.Patient_Doctor_Id" name="Patient_Doctor_Id" [disabled]="isRead">
+              </div>
+          </div>
+      </form>
+      <!-- Default form register -->
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-4">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect (click)="changeToEditionMode()" [disabled]="isCreate||isUpdate">Edit</button>
+    </div>
+    <div class = "col-md-4">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" (click)="writePatient()" mdbWavesEffect [disabled]="isRead">Save</button>
+    </div>
+    <div class = "col-md-4">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/patient" routerLinkActive="active" [disabled]="isRead" routerLink="/patient">Cancel</button>
+    </div>
+  </div>
+
+</div>

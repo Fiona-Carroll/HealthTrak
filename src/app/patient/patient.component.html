@@ -1,35 +1,64 @@
-<table mdbTable striped="true"  responsive="true">
-  <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Date of Birth</th>
-        <th>Age</th>
-        <th>Address</th>
-        <th>Contact Number</th>
-        <th>Next of Kin</th>
-        <th>Next of Kin Contact Number</th>
-        <th>Allergies</th>
-        <th>Other Details</th>
-        <th>Associated Doctor Id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr mdbTableCol *ngFor="let patient of patients">
-      <td>{{patient.Patient_Id}}</td>
-      <td>{{patient.Patient_Name}}</td>
-      <td>{{patient.Patient_Gender}}</td>
-      <td>{{patient.Patient_Date_Of_Birth}}</td>
-      <td>{{patient.Patient_Age}}</td>
-      <td>{{patient.Patient_Address}}</td>
-      <td>{{patient.Patient_Contact_Number}}</td>
-      <td>{{patient.Patient_Next_Of_Kin}}</td>
-      <td>{{patient.Patient_Next_Of_Kin_Contact_Number}}</td>
-      <td>{{patient.Patient_Allergies}}</td>
-      <td>{{patient.Patient_Other_Details}}</td>
-      <td>{{patient.Patient_Doctor_Id}}</td>
-    </tr>
-  </tbody>
-</table>
-<a class="btn btn-secondary btn-rounded" ripple-radius>View My Appointments</a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/patient-detail']" routerLinkActive="active">New Patient</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <i class="fa fa-heartbeat" aria-hidden="true"></i>
+        PATIENTS TABLE
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped w-auto" mdbTable striped="true"  responsive="true">
+        <thead class="tableHead">
+          <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Date of Birth</th>
+              <th>Age</th>
+              <th>Address</th>
+              <th>Contact Number</th>
+              <th>Next of Kin</th>
+              <th>Next of Kin Contact Number</th>
+              <th>Allergies</th>
+              <th>Other Details</th>
+              <th>Associated Doctor Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let patient of patients">
+            <!-- <div [routerLink]="['/patient-detail',patient.Patient_Id]"> -->
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Id}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Name}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Gender}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Date_Of_Birth}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Age}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Address}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Contact_Number}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Next_Of_Kin}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Next_Of_Kin_Contact_Number}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Allergies}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Other_Details}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Doctor_Id}}</td>
+            <!-- </div> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/appointment" routerLinkActive="active">View My Appointments</button>
+    </div>
+  </div>
+
+</div>

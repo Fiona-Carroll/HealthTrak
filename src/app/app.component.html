@@ -1,217 +1,148 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar #69f0ae green accent-2 ie-nav" [containerInside]="true">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar #69f0ae green accent-2 ie-nav navbarCustom" [containerInside]="true">
   <mdb-navbar-brand>
-        <i class="fas fa-heartbeat"></i>
-      <a class="logo navbar-brand" href="#"><strong>HealthTrak</strong></a>
+        <div>
+            <a class="logo navbar-brand" href="#"><strong>HealthTrak</strong></a>
+        </div>
+
+
   </mdb-navbar-brand>
   <links>
       <ul class="navbar-nav mr-auto">
-          <li class="nav-item active waves-light" mdbWavesEffect>
-              <a routerLink="/" routerLinkActive="active" class="nav-link">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a routerLink="/doctor" routerLinkActive="active" class="nav-link">Doctors</a>
           </li>
           <li class="nav-item waves-light" mdbWavesEffect>
-            <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+              <a routerLink="/patient" routerLinkActive="active" class="nav-link">Patients</a>
           </li>
           <li class="nav-item waves-light" mdbWavesEffect>
-          <a routerLink="/register" routerLinkActive="active" class="nav-link">Register</a>
-          </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
-              <a routerLink="/doctor" routerLinkActive="active" class="nav-link">Doctor</a>
-          </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
-              <a routerLink="/patient" routerLinkActive="active" class="nav-link">Patient</a>
-          </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
-              <a routerLink="/appointment" routerLinkActive="active" class="nav-link">View Appointments</a>
+              <a routerLink="/appointment" routerLinkActive="active" class="nav-link">Appointments</a>
             </li>
-            <li class="nav-item waves-light" mdbWavesEffect>
-            <a routerLink="/profile" routerLinkActive="active" class="nav-link">Edit Profile</a>
-            </li>
-            <li class="nav-item waves-light" mdbWavesEffect>
-                <a routerLink="/login" routerLinkActive="active" class="nav-link">Logout</a>
-            </li>
-          <div class="btn-group" dropdown mdbWavesEffect>
+            <!-- <li class="nav-item waves-light" mdbWavesEffect>
+              <a routerLink="/patient-detail" routerLinkActive="active" class="nav-link">Patient Detail</a>
+          </li> -->
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a routerLink="/doctor-detail" routerLinkActive="active" class="nav-link">Doctor Detail</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a routerLink="/appointment-detail" routerLinkActive="active" class="nav-link">Appointment Detail</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a routerLink="/create-patient" routerLinkActive="active" class="nav-link">Create Patient</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a routerLink="/create-doctor" routerLinkActive="active" class="nav-link">Create Doctor</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a routerLink="/create-appointment" routerLinkActive="active" class="nav-link">Create Appointment</a>
+          </li>
+          <!--<div class="btn-group" dropdown mdbWavesEffect>
                 <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle" ripple-radius>
                     Login
                 </button>
-            
-                <div class="dropdown-menu dropdown-primary">
+
+                 <div class="dropdown-menu dropdown-primary">
                     <a class="dropdown-item" href="#">Patient Login</a>
                     <a class="dropdown-item" href="#">Doctor Login</a>
                     <div class="divider dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Logout</a>
                 </div>
-            </div>
+            </div>-->
       </ul>
-      <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item waves-light" mdbWavesEffect>
-              <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
-          </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
-              <a class="nav-link"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
-              <a class="nav-link"><i class="fab fa-instagram"></i></a>
-          </li>
-      </ul>
+
   </links>
 </mdb-navbar>
 
-<!-- Main -->
-<main>
-    
-  <div class="container" style="height:1500px;">
-    
-      
 
-    
+<!-- Grid row -->
+<!-- Grid row -->
+<!-- <div class="row"> -->
+
+    <!-- Grid column -->
+    <!-- <div class="col-md-12">
+
+      <ul class="nav aqua-gradient py-4 mb-r font-weight-bold z-depth-1">
+        <li class="nav-item">
+          <a class="nav-link active white-text" href="#!">HealthTrak</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link white-text" routerLink="/doctor" routerLink="active">Doctors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link white-text" routerLink="/patient" routerLink="active">Patients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link white-text" routerLink="/appointment" routerLink="active">Appointments</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link white-text" routerLink="/patient-detail" routerLink="active">Patient Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white-text" routerLink="/doctor-detail" routerLink="active">Doctor Details</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link white-text" routerLink="/appointment-detail" routerLink="active">Appointment Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white-text" routerLink="/create-appointment" routerLink="active">Create Appointment</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link white-text" routerLink="/create-patient" routerLink="active">Create Patient</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link white-text" routerLink="/create-doctor" routerLink="active">Create Doctor</a>
+                    </li>
+      </ul>
+
+
+    </div> -->
+    <!-- Grid column -->
+
+  <!-- </div> -->
+  <!-- Grid row -->
+
+  <!-- Card -->
+  <!-- <mdb-card> -->
+      <!-- <div class="view rgba-white-slight waves-light" mdbWavesEffect> -->
+        <!-- Card img -->
+        <!-- <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img>
+        <a>
+          <div class="mask"></div>
+        </a>
+      </div> -->
+      <!--Card content-->
+      <!-- <mdb-card-body> -->
+        <!--Title-->
+        <!-- <mdb-card-title>
+          <h4>View Appointments</h4>
+        </mdb-card-title> -->
+
+        <!--Text-->
+        <!-- <mdb-card-text> Click here to view a list of your appointments
+        </mdb-card-text>
+
+        <a href="#" mdbBtn color="primary" mdbWavesEffect>Click me</a>
+      </mdb-card-body>
+    </mdb-card> -->
+    <!-- Card -->
+
+
+
+
+
+<!-- Main -->
+<main class="mainAppClass">
+
+
+
+
+  <div class="container">
+    <div class="row">
+
+    </div>
+
+
+
     <router-outlet></router-outlet>
   </div>
 </main>
 <!-- /.Main -->
-
-<!-- Footer -->
-<footer class="page-footer font-small blue-grey lighten-5">
-
-        <div style="background-color: #69f0ae;">
-          <div class="container">
-    
-            <!-- Grid row-->
-            <div class="row py-4 d-flex align-items-center">
-    
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                <h6 class="mb-0">Get connected with us on social networks!</h6>
-              </div>
-              <!-- Grid column -->
-    
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-7 text-center text-md-right">
-    
-                <!-- Facebook -->
-                <a class="fb-ic">
-                  <i class="fab fa-facebook-f white-text mr-4"> </i>
-                </a>
-                <!-- Twitter -->
-                <a class="tw-ic">
-                  <i class="fab fa-twitter white-text mr-4"> </i>
-                </a>
-                <!-- Google +-->
-                <a class="gplus-ic">
-                  <i class="fab fa-google-plus-g white-text mr-4"> </i>
-                </a>
-                <!--Linkedin -->
-                <a class="li-ic">
-                  <i class="fab fa-linkedin-in white-text mr-4"> </i>
-                </a>
-                <!--Instagram-->
-                <a class="ins-ic">
-                  <i class="fab fa-instagram white-text"> </i>
-                </a>
-    
-              </div>
-              <!-- Grid column -->
-    
-            </div>
-            <!-- Grid row-->
-    
-          </div>
-        </div>
-    
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left mt-5">
-    
-          <!-- Grid row -->
-          <div class="row mt-3 dark-grey-text">
-    
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-    
-              <!-- Content -->
-              <h6 class="text-uppercase font-weight-bold">Company name</h6>
-              <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit.</p>
-    
-            </div>
-            <!-- Grid column -->
-    
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-    
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold">Products</h6>
-              <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <a class="dark-grey-text" href="#!">MDBootstrap</a>
-              </p>
-              <p>
-                <a class="dark-grey-text" href="#!">MDWordPress</a>
-              </p>
-              <p>
-                <a class="dark-grey-text" href="#!">BrandFlow</a>
-              </p>
-              <p>
-                <a class="dark-grey-text" href="#!">Bootstrap Angular</a>
-              </p>
-    
-            </div>
-            <!-- Grid column -->
-    
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-    
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-              <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <a class="dark-grey-text" href="#!">Your Account</a>
-              </p>
-              <p>
-                <a class="dark-grey-text" href="#!">Become an Affiliate</a>
-              </p>
-              <p>
-                <a class="dark-grey-text" href="#!">Shipping Rates</a>
-              </p>
-              <p>
-                <a class="dark-grey-text" href="#!">Help</a>
-              </p>
-    
-            </div>
-            <!-- Grid column -->
-    
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-    
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold">Contact</h6>
-              <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-              <p>
-                <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-              <p>
-                <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-              <p>
-                <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-    
-            </div>
-            <!-- Grid column -->
-    
-          </div>
-          <!-- Grid row -->
-    
-        </div>
-        <!-- Footer Links -->
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center text-black-50 py-3">
-          <a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/"> </a>
-        </div>
-        <!-- Copyright -->
-    
-      </footer>
-      <!-- Footer -->
-
-
-
-
