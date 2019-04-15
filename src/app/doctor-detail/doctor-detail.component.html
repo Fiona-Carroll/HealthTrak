@@ -4,6 +4,18 @@
       <!-- Back button -->
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/doctor" routerLinkActive="active">Back</button>
     </div>
+    <div class = "col-md-3">
+      <!-- View Patients -->
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/patient', doctorDetail.Doctor_Id]" routerLinkActive="active">View Patients</button>
+    </div>
+    <div class = "col-md-3">
+      <!-- View Appointments List -->
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/appointment" routerLinkActive="active">View Appointment List</button>
+    </div>
+    <div class = "col-md-3">
+      <!-- Logout -->
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Logout</button>
+    </div>
   </div>
 
   <div class = "row">
@@ -18,40 +30,42 @@
           <div class="form-row mb-4">
               <div class="col">
                   <!-- PPS Number -->
-                  <input type="text" id="defaultRegisterFormPPSNumber" class="form-control" placeholder="PPS Number" aria-describedby="defaultRegisterFormPPSNumberHelpBlock"  [(ngModel)]="doctorDetail.Doctor_Id" name="Doctor_Id">
+                  <input type="text" id="defaultRegisterFormPPSNumber" class="form-control" placeholder="PPS Number" aria-describedby="defaultRegisterFormPPSNumberHelpBlock"  [(ngModel)]="doctorDetail.Doctor_Id" name="Doctor_Id" [disabled]="isRead">
                   <small id="defaultRegisterFormPPSNumberHelpBlock" class="form-text text-muted mb-4">
                      PPS Number Required. Example format: 7293728R
                     </small>
                 </div>
               <div class="col">
                 <!-- Full Name -->
-                <input type="text" id="defaultRegisterFormFullName" class="form-control" placeholder="Full Name" aria-describedby="defaultRegisterFormFullNameHelpBlock" [(ngModel)]="doctorDetail.Doctor_Name" name="Doctor_Name">
+                <input type="text" id="defaultRegisterFormFullName" class="form-control" placeholder="Full Name" aria-describedby="defaultRegisterFormFullNameHelpBlock" [(ngModel)]="doctorDetail.Doctor_Name" name="Doctor_Name" [disabled]="isRead">
                 <small id="defaultRegisterFormFullNameHelpBlock" class="form-text text-muted mb-4">
                     Full name required. Example format: Dr Mary Healy
                   </small>
               </div>
             </div>
 
-            <div class="form-row mb-4">
+            
 
                <!-- Gender -->
-        <input type="gender" id="defaultRegisterFormGender" class="form-control" placeholder="Gender" aria-describedby="defaultRegisterFormGenderHelpBlock" [(ngModel)]="doctorDetail.Doctor_Gender" name="Doctor_Gender">
-
-            </div>
+        <input type="gender" id="defaultRegisterFormGender" class="form-control" placeholder="Gender" aria-describedby="defaultRegisterFormGenderHelpBlock" [(ngModel)]="doctorDetail.Doctor_Gender" name="Doctor_Gender" [disabled]="isRead">
+          <small id="defaultRegisterFormGenderHelpBlock" class="form-text text-muted mb-4">
+            Gender
+          </small>
+          
 
 
 
           <div class="form-row mb-4">
           <div class = "col">
             <!-- Date Of Birth -->
-            <input type="dateofbirth" id="defaultRegisterFormDateOfBirth" class="form-control" placeholder="Date of Birth" aria-describedby="defaultRegisterFormDateOfBirthHelpBlock" [(ngModel)]="doctorDetail.Doctor_Date_Of_Birth" name="Doctor_Date_Of_Birth">
+            <input type="dateofbirth" id="defaultRegisterFormDateOfBirth" class="form-control" placeholder="Date of Birth" aria-describedby="defaultRegisterFormDateOfBirthHelpBlock" [(ngModel)]="doctorDetail.Doctor_Date_Of_Birth" name="Doctor_Date_Of_Birth" [disabled]="isRead">
             <small id="defaultRegisterFormDateOfBirthHelpBlock" class="form-text text-muted mb-4">
               Date of birth must be in the format DD/MM/YYYY
             </small>
           </div>
           <div class = "col">
             <!-- Age -->
-            <input type="age" id="defaultRegisterFormAge" class="form-control" placeholder="Age" aria-describedby="defaultRegisterFormAgeHelpBlock" [(ngModel)]="doctorDetail.Doctor_Age" name="Doctor_Age">
+            <input type="age" id="defaultRegisterFormAge" class="form-control" placeholder="Age" aria-describedby="defaultRegisterFormAgeHelpBlock" [(ngModel)]="doctorDetail.Doctor_Age" name="Doctor_Age" [disabled]="isRead">
             <small id="defaultRegisterFormAgeHelpBlock" class="form-text text-muted mb-4">
               Age must be in numeric format only
             </small>
@@ -59,36 +73,42 @@
         </div>
 
         <!-- Address -->
-        <input type="address" id="defaultRegisterFormAddress" class="form-control" placeholder="Address" aria-describedby="defaultRegisterFormAddressHelpBlock" [(ngModel)]="doctorDetail.Doctor_Address" name="Doctor_Address">
+        <input type="address" id="defaultRegisterFormAddress" class="form-control" placeholder="Address" aria-describedby="defaultRegisterFormAddressHelpBlock" [(ngModel)]="doctorDetail.Doctor_Address" name="Doctor_Address" [disabled]="isRead">
         <small id="defaultRegisterFormAddressHelpBlock" class="form-text text-muted mb-4">
           Address. Example Format: Abbey Medical Centre, Gort Road, Ennis, County Clare
         </small>
 
 
-          <div class="form-row mb-4">
+        
                   <!-- Contact Number -->
-                  <input type="text" id="defaultRegisterFormContactNumber" class="form-control" placeholder="Contact Number" aria-describedby="defaultRegisterFormContactNumberHelpBlock" [(ngModel)]="doctorDetail.Doctor_Contact_Number" name="Doctor_Contact_Number">
-          </div>
+                  <input type="text" id="defaultRegisterFormContactNumber" class="form-control" placeholder="Contact Number" aria-describedby="defaultRegisterFormContactNumberHelpBlock" [(ngModel)]="doctorDetail.Doctor_Contact_Number" name="Doctor_Contact_Number" [disabled]="isRead">
+                  <small id="defaultRegisterFormContactNumberHelpBlock" class="form-text text-muted mb-4">
+                      Contact Number
+                    </small>
+        
 
-            <div class="form-row mb-4">
+          
                 <!-- Other Details -->
-                  <input type="text" id="defaultRegisterFormOtherDetails" class="form-control" placeholder="Other Details" aria-describedby="defaultRegisterFormOtherDetailsHelpBlock" [(ngModel)]="doctorDetail.Doctor_Other_Details" name="Doctor_Other_Details">
-            </div>
+                  <input type="text" id="defaultRegisterFormOtherDetails" class="form-control" placeholder="Other Details" aria-describedby="defaultRegisterFormOtherDetailsHelpBlock" [(ngModel)]="doctorDetail.Doctor_Other_Details" name="Doctor_Other_Details" [disabled]="isRead">
+                  <small id="defaultRegisterFormOtherDetailsHelpBlock" class="form-text text-muted mb-4">
+                      Other Details
+                    </small>
+            
 
 
 
 
         <!-- Email -->
-        <input type="email" id="defaultRegisterFormEmail" class="form-control" placeholder="Email" aria-describedby="defaultRegisterFormEmailHelpBlock">
+        <!-- <input type="email" id="defaultRegisterFormEmail" class="form-control" placeholder="Email" aria-describedby="defaultRegisterFormEmailHelpBlock">
         <small id="defaultRegisterFormEmailHelpBlock" class="form-text text-muted mb-4">
           Please enter a valid email with format: j.murphy@gmail.com
-        </small>
+        </small> -->
 
           <!-- Password -->
-          <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+          <!-- <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
           <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
             At least 8 characters and 1 digit
-          </small>
+          </small> -->
         </form>
         <!-- Default form register -->
       </div>
@@ -96,13 +116,13 @@
 
     <div class="row">
       <div class = "col-md-4">
-        <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect>Edit</button>
+        <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect (click)="changeToEditMode()" [disabled]="isCreate||isUpdate||readMode">Edit</button>
       </div>
       <div class = "col-md-4">
-        <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect>Save</button>
+        <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect (click)="writeDoctor()" mdbWavesEffect [disabled]="isRead">Save</button>
       </div>
       <div class = "col-md-4">
-        <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect>Cancel</button>
+        <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/doctor" routerLinkActive="active" [disabled]="isRead" routerLink="/doctor">Cancel</button>
       </div>
     </div>
 

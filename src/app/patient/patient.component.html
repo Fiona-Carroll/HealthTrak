@@ -1,9 +1,9 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="container">
+  <!-- <div class="row">
     <div class="col-md-3">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/patient-detail']" routerLinkActive="active">New Patient</button>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-md-12">
@@ -36,18 +36,18 @@
         <tbody>
           <tr mdbTableCol *ngFor="let patient of patients">
             <!-- <div [routerLink]="['/patient-detail',patient.Patient_Id]"> -->
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Id}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Name}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Gender}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Date_Of_Birth}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Age}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Address}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Contact_Number}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Next_Of_Kin}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Next_Of_Kin_Contact_Number}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Allergies}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Other_Details}}</td>
-              <td [routerLink]="['/patient-detail',patient.Patient_Id]">{{patient.Patient_Doctor_Id}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Id}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Name}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Gender}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Date_Of_Birth}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Age}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Address}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Contact_Number}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Next_Of_Kin}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Next_Of_Kin_Contact_Number}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Allergies}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Other_Details}}</td>
+              <td [routerLink]="['/patient-detail',patient.Patient_Id]"> {{patient.Patient_Doctor_Id}}</td>
             <!-- </div> -->
           </tr>
         </tbody>
@@ -55,10 +55,10 @@
     </div>
   </div>
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-12">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/appointment" routerLinkActive="active">View My Appointments</button>
     </div>
-  </div>
+  </div> -->
 
 </div>

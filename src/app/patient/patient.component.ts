@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HealthtrakService } from '../healthtrak.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-patient',
@@ -9,13 +10,15 @@ import { HealthtrakService } from '../healthtrak.service';
 export class PatientComponent implements OnInit {
 
   private patients : any[];
+  public doctorId : string;
 
-  constructor(public rest:HealthtrakService) { 
+  constructor(public rest:HealthtrakService,  private _Activatedroute:ActivatedRoute, private router: Router) { 
+    this.doctorId=_Activatedroute.snapshot.params['doctorId'];
     this.getPatients();
   }
 
   getPatients() {
-    this.rest.getPatients().subscribe(patients => {
+    this.rest.getPatients(this.doctorId).subscribe(patients => {
     console.log("It works");
     this.patients =  patients.patient as any[];
     console.log(this.patients);

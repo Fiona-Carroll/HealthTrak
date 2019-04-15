@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar #69f0ae green accent-2 ie-nav navbarCustom" [containerInside]="true">
+<!-- <mdb-navbar SideClass="navbar navbar-expand-lg navbar #69f0ae green accent-2 ie-nav navbarCustom">
   <mdb-navbar-brand>
         <div>
             <a class="logo navbar-brand" href="#"><strong>HealthTrak</strong></a>
@@ -16,17 +16,17 @@
           </li>
           <li class="nav-item waves-light" mdbWavesEffect>
               <a routerLink="/appointment" routerLinkActive="active" class="nav-link">Appointments</a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item waves-light" mdbWavesEffect>
               <a routerLink="/patient-detail" routerLinkActive="active" class="nav-link">Patient Detail</a>
           </li> -->
-          <li class="nav-item waves-light" mdbWavesEffect>
+          <!-- <li class="nav-item waves-light" mdbWavesEffect>
               <a routerLink="/doctor-detail" routerLinkActive="active" class="nav-link">Doctor Detail</a>
-          </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
+          </li> -->
+          <!-- <li class="nav-item waves-light" mdbWavesEffect>
               <a routerLink="/appointment-detail" routerLinkActive="active" class="nav-link">Appointment Detail</a>
-          </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
+          </li> -->
+          <!-- <li class="nav-item waves-light" mdbWavesEffect>
               <a routerLink="/create-patient" routerLinkActive="active" class="nav-link">Create Patient</a>
           </li>
           <li class="nav-item waves-light" mdbWavesEffect>
@@ -35,6 +35,9 @@
           <li class="nav-item waves-light" mdbWavesEffect>
               <a routerLink="/create-appointment" routerLinkActive="active" class="nav-link">Create Appointment</a>
           </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a routerLink="/" routerLinkActive="active" class="nav-link">Logout</a>
+        </li> -->
           <!--<div class="btn-group" dropdown mdbWavesEffect>
                 <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle" ripple-radius>
                     Login
@@ -47,57 +50,54 @@
                     <a class="dropdown-item" href="#">Logout</a>
                 </div>
             </div>-->
-      </ul>
+      <!-- </ul>
 
   </links>
-</mdb-navbar>
+</mdb-navbar> -->
 
-
+<title>
+  <h1>'Welcome to HealthTrak!'</h1>
+</title>
 <!-- Grid row -->
 <!-- Grid row -->
-<!-- <div class="row"> -->
+<div class="row">
 
     <!-- Grid column -->
-    <!-- <div class="col-md-12">
+    <div class="col-md-12">
 
       <ul class="nav aqua-gradient py-4 mb-r font-weight-bold z-depth-1">
         <li class="nav-item">
-          <a class="nav-link active white-text" href="#!">HealthTrak</a>
+          <a class="nav-link active white-text" href="#">HEALTHTRAK</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link white-text" routerLink="/doctor" routerLink="active">Doctors</a>
+          <a routerLink="/doctor" routerLinkActive="active" class="nav-link white-text">Doctors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link white-text" routerLink="/patient" routerLink="active">Patients</a>
+          <a routerLink="/patient" routerLinkActive="active" class="nav-link white-text">Patients</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link white-text" routerLink="/appointment" routerLink="active">Appointments</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link white-text" routerLink="/patient-detail" routerLink="active">Patient Details</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link white-text" routerLink="/doctor-detail" routerLink="active">Doctor Details</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link white-text" routerLink="/appointment-detail" routerLink="active">Appointment Details</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link white-text" routerLink="/create-appointment" routerLink="active">Create Appointment</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link white-text" routerLink="/create-patient" routerLink="active">Create Patient</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link white-text" routerLink="/create-doctor" routerLink="active">Create Doctor</a>
-                    </li>
+          <a routerLink="/appointment" routerLinkActive="active" class="nav-link white-text">Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/patient-detail" routerLinkActive="active" class="nav-link white-text">Patient Detail</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/doctor-detail" routerLinkActive="active" class="nav-link white-text">Doctor Detail</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/appointment-detail" routerLinkActive="active" class="nav-link white-text">Appointment Detail</a>
+        </li>
+        <li class="nav-item">
+          <!-- <a routerLink="/" routerLinkActive="active" class="nav-link white-text">Logout</a> -->
+          <a class="nav-link white-text" (click)="logout()">Logout</a>
+        </li>
       </ul>
 
 
-    </div> -->
+    </div>
     <!-- Grid column -->
 
-  <!-- </div> -->
+  </div>
   <!-- Grid row -->
 
   <!-- Card -->
@@ -127,22 +127,35 @@
 
 
 
+<!-- nav -->
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav> -->
+
+<!-- main app container -->
+<!-- <div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <alert></alert>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div> -->
+
 
 
 <!-- Main -->
 <main class="mainAppClass">
 
-
-
-
   <div class="container">
-    <div class="row">
-
-    </div>
-
-
-
+      <alert></alert>
     <router-outlet></router-outlet>
+
   </div>
 </main>
 <!-- /.Main -->

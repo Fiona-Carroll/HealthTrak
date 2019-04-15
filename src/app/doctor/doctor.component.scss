@@ -1,9 +1,25 @@
-
-
-.hoverable{
-    width: 100%;
+.table {
+    background-color : azure;
+  
+  }
+  
+  .tableHead {
+    background-color : #69f0ae;
+  }
+  
+  .jumbotron {
+    background-color: #69f0ae;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+  
+  }
+  
+  .fa {
+    size: 50px;
+  }
+  
+.avatar  {
+  size : 20px;
 }
 
-chip {
-    height: 20%;
-}

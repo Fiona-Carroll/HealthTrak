@@ -4,7 +4,13 @@
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/patient" routerLinkActive="active">Back</button>
     </div>
     <div class = "col-md-3">
-      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/appointment', patientDetail.Patient_Id]" routerLinkActive="active">Appointments</button>
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/appointment', patientDetail.Patient_Id]" routerLinkActive="active">View My Appointments</button>
+    </div>
+    <div class = "col-md-3">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/doctor-detail', patientDetail.Patient_Doctor_Id, true]" routerLinkActive="active">View My Doctor</button>
+    </div>
+    <div class = "col-md-3">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Logout</button>
     </div>
   </div>
   <div class = "row">
@@ -33,6 +39,15 @@
             </div>
           </div>
 
+          
+              
+                <!-- Gender -->
+                <input type="gender" id="defaultRegisterFormGender" class="form-control" placeholder="Gender" aria-describedby="defaultRegisterFormGenderHelpBlock" [(ngModel)]="patientDetail.Patient_Gender" name="Patient_Gender" [disabled]="isRead">
+                <small id="defaultRegisterFormGenderHelpBlock" class="form-text text-muted mb-4">
+                  Gender
+                </small>
+              
+
         <div class="form-row mb-4">
         <div class = "col">
           <!-- Date Of Birth -->
@@ -50,10 +65,10 @@
         </div>
       </div>
 
-      <!-- Address Line 1 -->
-      <input type="addressFirstLine" id="defaultRegisterFormAddressFirstLine" class="form-control" placeholder="Address Line 1" aria-describedby="defaultRegisterFormAddressFirstLineHelpBlock" [(ngModel)]="patientDetail.Patient_Address" name="Patient_Address" [disabled]="isRead">
-      <small id="defaultRegisterFormAddressFirstLineHelpBlock" class="form-text text-muted mb-4">
-        First Line Of Address
+      <!-- Address -->
+      <input type="address" id="defaultRegisterFormAddress" class="form-control" placeholder="Address" aria-describedby="defaultRegisterFormAddressHelpBlock" [(ngModel)]="patientDetail.Patient_Address" name="Patient_Address" [disabled]="isRead">
+      <small id="defaultRegisterFormAddressHelpBlock" class="form-text text-muted mb-4">
+        Address. Example format: 116, Ivy Hill, Tulla Road, Ennis, County Clare
       </small>
 
 
@@ -61,14 +76,23 @@
             <div class="col">
                 <!-- Contact Number -->
                 <input type="text" id="defaultRegisterFormContactNumber" class="form-control" placeholder="Contact Number" aria-describedby="defaultRegisterFormContactNumberHelpBlock" [(ngModel)]="patientDetail.Patient_Contact_Number" name="Patient_Contact_Number" [disabled]="isRead">
+                <small id="defaultRegisterFormContactNumberHelpBlock" class="form-text text-muted mb-4">
+                    Contact Number
+                  </small>
               </div>
             <div class="col">
               <!-- Next Of Kin -->
               <input type="text" id="defaultRegisterFormNextOfKin" class="form-control" placeholder="Next Of Kin" aria-describedby="defaultRegisterFormNextOfKinHelpBlock" [(ngModel)]="patientDetail.Patient_Next_Of_Kin" name="Patient_Next_Of_Kin" [disabled]="isRead">
+              <small id="defaultRegisterFormNextOfKinHelpBlock" class="form-text text-muted mb-4">
+                  Next of Kin Name. Example Format: Mary Healy (spouse)
+                </small>
             </div>
             <div class="col">
               <!-- Next Of Kin Contact Number -->
               <input type="text" id="defaultRegisterFormNextOfKinContactNumber" class="form-control" placeholder="Next of Kin Contact Number" aria-describedby="defaultRegisterFormNextOfKinContactNumberHelpBlock" [(ngModel)]="patientDetail.Patient_Next_Of_Kin_Contact_Number" name="Patient_Next_Of_Kin_Contact_Number" [disabled]="isRead">
+              <small id="defaultRegisterFormNextOfKinContactNumberHelpBlock" class="form-text text-muted mb-4">
+                  Next of Kin Contact Number
+                </small>
             </div>
           </div>
 
@@ -76,15 +100,24 @@
               <div class="col">
                   <!-- Allergies -->
                   <input type="text" id="defaultRegisterFormAllergies" class="form-control" placeholder="Allergies" aria-describedby="defaultRegisterFormAllergiesHelpBlock"[(ngModel)]="patientDetail.Patient_Allergies" name="Patient_Allergies" [disabled]="isRead">
+                  <small id="defaultRegisterFormAllergiesHelpBlock" class="form-text text-muted mb-4">
+                      Allergies
+                    </small>
                 </div>
               <div class="col">
                 <!-- Other Details -->
                 <input type="text" id="defaultRegisterFormOtherDetails" class="form-control" placeholder="Other Details" aria-describedby="defaultRegisterFormOtherDetailsHelpBlock" [(ngModel)]="patientDetail.Patient_Other_Details" name="Patient_Other_Details" [disabled]="isRead">
+                <small id="defaultRegisterFormOtherDetailsHelpBlock" class="form-text text-muted mb-4">
+                    Other Details
+                  </small>
 
               </div>
               <div class="col">
                 <!-- Associated Doctor Id -->
                 <input type="text" id="defaultRegisterFormAssociatedDoctorId" class="form-control" placeholder="Associated Doctor Id" aria-describedby="defaultRegisterFormAssociatedDoctorIdHelpBlock" [(ngModel)]="patientDetail.Patient_Doctor_Id" name="Patient_Doctor_Id" [disabled]="isRead">
+                <small id="defaultRegisterFormAssociatedDoctorIdHelpBlock" class="form-text text-muted mb-4">
+                    Associated Doctor Id
+                  </small>
               </div>
           </div>
       </form>
@@ -93,7 +126,7 @@
   </div>
   <div class = "row">
     <div class = "col-md-4">
-      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect (click)="changeToEditionMode()" [disabled]="isCreate||isUpdate">Edit</button>
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect (click)="changeToEditMode()" [disabled]="isCreate||isUpdate">Edit</button>
     </div>
     <div class = "col-md-4">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" (click)="writePatient()" mdbWavesEffect [disabled]="isRead">Save</button>

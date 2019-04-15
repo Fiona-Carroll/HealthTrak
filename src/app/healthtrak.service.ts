@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Appointment } from './model/appointment-model';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,16 +22,16 @@ export class HealthtrakService {
     return body || { };
   }
 
-  getPatients(): Observable<any> {
-  console.log(this.endpoint + '/patient/get');
-  return this.http.get(this.endpoint + '/patient/get').pipe(
-    map(this.extractData),
-    catchError(err => {
-      console.log("error:"+err.message);
-      return new Observable;
-    })
-    );
-}
+//   getPatients(): Observable<any> {
+//   console.log(this.endpoint + '/patient/get');
+//   return this.http.get(this.endpoint + '/patient/get').pipe(
+//     map(this.extractData),
+//     catchError(err => {
+//       console.log("error:"+err.message);
+//       return new Observable;
+//     })
+//     );
+// }
 
 getAppointments(patientId): Observable<any> {
   let patientFilter = patientId ? "?patientId="+ patientId : "";
@@ -53,6 +55,25 @@ getAppointments(patientId): Observable<any> {
     );
 }
 
+getPatients(doctorId): Observable<any> {
+  let doctorFilter = doctorId ? "?doctorId"+ doctorId : "";
+  console.log("patientFilter: "+doctorFilter)
+  console.log("doctorId: "+doctorId);
+
+  let params = new HttpParams();
+  if(doctorId){
+    params = params.append('doctorId', doctorId);
+  }
+  console.log(this.endpoint + '/patient/get');
+  return this.http.get(this.endpoint + '/patient/get',{params: params}).pipe(
+    map(this.extractData),
+    catchError(err => {
+      console.log("error:"+err.message);
+      return new Observable;
+    })
+    );
+}
+  
 getDoctors(): Observable<any> {
   console.log(this.endpoint + '/doctor/get');
   return this.http.get(this.endpoint + '/doctor/get').pipe(
@@ -94,7 +115,7 @@ createPatient(patient): Observable<any> {
 createAppointment(appointment:Appointment): Observable<any> {
   console.log(appointment);
   return this.http.post<any>(this.endpoint + '/appointment/create', JSON.stringify(appointment), this.httpOptions).pipe(
-    tap((appointment) => console.log(`added appointment w/ id=${appointment.id}`)),
+    tap((appointment) => console.log(`added appointment with id=${appointment.Appointment_Id}`)),
     catchError(this.handleError<any>('createAppointment'))
   );
 }
@@ -102,7 +123,7 @@ createAppointment(appointment:Appointment): Observable<any> {
 createDoctor(doctor): Observable<any> {
   console.log(doctor);
   return this.http.post<any>(this.endpoint + '/doctor/create', JSON.stringify(doctor), this.httpOptions).pipe(
-    tap((doctor) => console.log(`added doctor w/ id=${doctor.id}`)),
+    tap((doctor) => console.log(`added doctor with id=${doctor.Doctor_Id}`)),
     catchError(this.handleError<any>('createDoctor'))
   );
 }
@@ -114,9 +135,9 @@ updatePatient (patient): Observable<any> {
   );
 }
 
-updateDoctor (id, doctor): Observable<any> {
-  return this.http.put(this.endpoint + 'update?id=' + id, JSON.stringify(doctor), this.httpOptions).pipe(
-    tap(_ => console.log(`updated doctor id=${id}`)),
+updateDoctor (doctor): Observable<any> {
+  return this.http.put(this.endpoint + '/doctor/update', JSON.stringify(doctor), this.httpOptions).pipe(
+    tap(_ => console.log('updated doctor')),
     catchError(this.handleError<any>('updateDoctor'))
   );
 }

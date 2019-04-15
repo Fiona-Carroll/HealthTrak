@@ -1,199 +1,181 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
-      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">HealthTrak Home</button>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <table mdbTable striped="true"  responsive="true">
-          <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Date of Birth</th>
-                <th>Age</th>
-                <th>Address</th>
-                <th>Contact Number</th>
-                <th>Other Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr mdbTableCol *ngFor="let doctor of doctors">
-              <td>{{doctor.Doctor_Id}}</td>
-              <td>{{doctor.Doctor_Name}}</td>
-              <td>{{doctor.Doctor_Gender}}</td>
-              <td>{{doctor.Doctor_Date_Of_Birth}}</td>
-              <td>{{doctor.Doctor_Age}}</td>
-              <td>{{doctor.Doctor_Address}}</td>
-              <td>{{doctor.Doctor_Contact_Number}}</td>
-              <td>{{doctor.Doctor_Other_Details}}</td>
-            </tr>
-          </tbody>
-        </table>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <a class="btn btn-secondary btn-rounded" ripple-radius routerLink="/appointment-detail" routerLinkActive="active">View My Appointments</a>
-    </div>
-    <div class="col-md-4">
-        <a class="btn btn-secondary btn-rounded" ripple-radius routerLink="/patient-detail" routerLinkActive="active">View My Patients</a>
-    </div>
-    <div class="col-md-4">
-      <a class="btn btn-secondary btn-rounded" ripple-radius>Edit Profile</a>
-    </div>
-    <div class="col-md-4">
-        <a class="btn btn-secondary btn-rounded" ripple-radius routerLink="/" routerLinkActive="active">Logout</a>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-  <!-- Section: Team v.1 -->
-<section class="team-section text-center my-5">
-
-    <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold my-5">Our amazing team</h2>
-    <!-- Section description -->
-    <p class="grey-text w-responsive mx-auto mb-5">Here at the Grange Medical Centre we have an expert clinic with an amazing team of General Practitioners and Medical Healthcare Experts who are among the first clinics in Ireland to use the HealthTrak System in Ireland.
-      </p>
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
-        <div class="avatar mx-auto">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS1065IYOiOvx1DKnVlxr5sk2pbYmyT8mfQeCD68h0C1YYPf2D" class="rounded-circle z-depth-1"
-            alt="Sample avatar">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+            DOCTORS TABLE
+          </div>
         </div>
-        <h5 class="font-weight-bold mt-4 mb-3">Dr Joan Hurley</h5>
-        <p class="text-uppercase blue-text"><strong>Senior Family Practitioner</strong></p>
-        <p class="grey-text">Having founded the Grange Medical Centre over twenty years ago to serve the Ennis and surrounding communities in County Clare, I believe using HealthTrak will help us to move forward into a new and exciting era in Family Practice Medicine. Our patients and doctors alike will have more peace of mind and can interact with more consistent data available to them about their patient history. I believe it will be a fantastic tool for our clinic!</p>
-
       </div>
-      <!-- Grid column -->
 
-      <!-- Grid column -->
-      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
-        <div class="avatar mx-auto">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle z-depth-1"
-            alt="Sample avatar">
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered table-striped w-auto" mdbTable striped="true"  responsive="true">
+            <thead class="tableHead">
+              <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Date of Birth</th>
+                  <th>Age</th>
+                  <th>Address</th>
+                  <th>Contact Number</th>
+                  <th>Other Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr mdbTableCol *ngFor="let doctor of doctors">
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Id}}</td>
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Name}}</td>
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Gender}}</td>
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Date_Of_Birth}}</td>
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Age}}</td>
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Address}}</td>
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Contact_Number}}</td>
+                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Other_Details}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+          <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">View My Patients</button>
         </div>
-        <h5 class="font-weight-bold mt-4 mb-3">Dr Niall Burke</h5>
-        <p class="text-uppercase blue-text"><strong>Senior Family Practitioner</strong></p>
-        <p class="grey-text">Having travelled abroad and seen other digital medical health record systems in other developed and developing countries, I believe a system like HealthTrak will be imperative to the future success and improvement of the Irish Healthcare System. As a general practitioner and a local Clare man, I look forward every day to serving the people of my community, and I believe HealthTrak is a big step forward in terms of the digitalisation of the Irish Healthcare System.
+      </div>
+  </div>
+
+  
+    <!-- Section: Team v.1 -->
+  <section class="team-section text-center my-5">
+  
+      <!-- Section heading -->
+      <h2 class="h1-responsive font-weight-bold my-5">Our amazing team</h2>
+      <!-- Section description -->
+      <p class="grey-text w-responsive mx-auto mb-5">Here at the Grange Medical Centre we have an expert clinic with an amazing team of General Practitioners and Medical Healthcare Experts who are among the first clinics in Ireland to use the HealthTrak System in Ireland.
         </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-lg-4 col-md-6 mb-md-0 mb-5">
-        <div class="avatar mx-auto">
-          <img src="https://image.freepik.com/free-photo/doctor-smiling-with-stethoscope_1154-36.jpg" class="rounded-circle z-depth-1"
-            alt="Sample avatar">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+          <div class="avatar mx-auto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS1065IYOiOvx1DKnVlxr5sk2pbYmyT8mfQeCD68h0C1YYPf2D" class="rounded-circle z-depth-1"
+              alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">Dr Joan Hurley</h5>
+          <p class="text-uppercase blue-text"><strong>Senior Family Practitioner</strong></p>
+          <p class="grey-text">Having founded the Grange Medical Centre over twenty years ago to serve the Ennis and surrounding communities in County Clare, I believe using HealthTrak will help us to move forward into a new and exciting era in Family Practice Medicine. Our patients and doctors alike will have more peace of mind and can interact with more consistent data available to them about their patient history. I believe it will be a fantastic tool for our clinic!</p>
+  
         </div>
-        <h5 class="font-weight-bold mt-4 mb-3">Dr Conor Sheehan</h5>
-        <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
-        <p class="grey-text">As a recently graduated family practitioner, I am starting out my career on
-            a high with the announcement of Pilot programs such as the HealthTrak medical
-            history tracking application. I believe this is a welcome step forward for the
-            Irish Healthcare System and I look forward to being among the first clinics in
-            Ireland to be officially testing out this system. I am sure we will reap huge benefits
-            from this trial.</p>
-
-      </div>
-      <!-- Grid column -->
-
-
-    </div>
-    <!-- Grid row -->
-
-  </section>
-  <!-- Section: Team v.1 -->
-
-
-  <!-- Section: Team v.1 -->
-<section class="team-section text-center my-5">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
-        <div class="avatar mx-auto">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ63LJruitvV-UYw9PHD_WP0Y_2WSG6XDMDLF9pQV-vJAy2KEXpqQ"
-            alt="Sample avatar">
-        </div>
-        <h5 class="font-weight-bold mt-4 mb-3">Dr John Finnegan</h5>
-        <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
-        <p class="grey-text">I am proud to be working as a part of the Grange Medical Centre team and
-            to be a part of the Pilot Project for the HealthTrak medical history tracking
-            application. It is an exciting step in the digitalisation of Healthcare records
-            in Ireland, and I look forward to introducing our patients to the benefits of
-            this new tool.</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
-        <div class="avatar mx-auto">
-          <img src="https://unixtitan.net/images/healthcare-clipart-medical-team-3.png" class="rounded-circle z-depth-1"
-            alt="Sample avatar">
-        </div>
-        <h5 class="font-weight-bold mt-4 mb-3">Dr Alice Doran</h5>
-        <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
-        <p class="grey-text">Having served many different communities around Ireland as a family
-            practitioner for the last ten years, I can see a real need in the Irish Healthcare System
-            for HealthTrak. I look forward to testing it out during this exceptional Pilot project.
-</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-lg-4 col-md-6 mb-md-0 mb-5">
-        <div class="avatar mx-auto">
-          <img src="http://www.cpsofnj.com/wp-content/uploads/2014/07/doc2.jpg" class="rounded-circle z-depth-1"
-            alt="Sample avatar">
-        </div>
-        <h5 class="font-weight-bold mt-4 mb-3">Dr Kenneth Peterson</h5>
-        <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
-        <p class="grey-text">As a family practitioner in Ireland for the last fifteen years, I specialise in early childhood diagnostics and have been with the Grange Medical Centre for the last five years. We have an amazing team of healthcare experts serving the County Clare community.
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+          <div class="avatar mx-auto">
+            <img src="https://t4.ftcdn.net/jpg/00/70/20/37/240_F_70203731_bEevuQqkoWgNBuHnvGFLwgvTHdF8VM7x.jpg" class="rounded-circle z-depth-1"
+              alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">Dr Niall Burke</h5>
+          <p class="text-uppercase blue-text"><strong>Senior Family Practitioner</strong></p>
+          <p class="grey-text">Having travelled abroad and seen other digital medical health record systems in other developed and developing countries, I believe a system like HealthTrak will be imperative to the future success and improvement of the Irish Healthcare System. As a general practitioner and a local Clare man, I look forward every day to serving the people of my community, and I believe HealthTrak is a big step forward in terms of the digitalisation of the Irish Healthcare System.
           </p>
-
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-md-0 mb-5">
+          <div class="avatar mx-auto">
+            <img src="https://image.freepik.com/free-photo/doctor-smiling-with-stethoscope_1154-36.jpg" class="rounded-circle z-depth-1"
+              alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">Dr Conor Sheehan</h5>
+          <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
+          <p class="grey-text">As a recently graduated family practitioner, I am starting out my career on
+              a high with the announcement of Pilot programs such as the HealthTrak medical
+              history tracking application. I believe this is a welcome step forward for the
+              Irish Healthcare System and I look forward to being among the first clinics in
+              Ireland to be officially testing out this system. I am sure we will reap huge benefits
+              from this trial.</p>
+  
+        </div>
+        <!-- Grid column -->
+  
+  
       </div>
-      <!-- Grid column -->
-
-
-
-    </div>
-    <!-- Grid row -->
-
-  </section>
-  <!-- Section: Team v.1 -->
-
-
-
-
-
-<!-- Main -->
-<main>
-
-  <div class="container" style="height:1500px;">
-    <router-outlet></router-outlet>
-
-
-
-  </div>
-</main>
-<!-- /.Main -->
+      <!-- Grid row -->
+  
+    </section>
+    <!-- Section: Team v.1 -->
+  
+  
+    <!-- Section: Team v.1 -->
+  <section class="team-section text-center my-5">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+          <div class="avatar mx-auto">
+            <img src="https://image1.masterfile.com/getImage/NjQ5LTAzMTUzOTYyZW4uMDAwMDAwMDA=ALytB6/649-03153962en_Masterfile.jpg" class="rounded-circle z-depth-1"
+              alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">Dr John Finnegan</h5>
+          <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
+          <p class="grey-text">I am proud to be working as a part of the Grange Medical Centre team and
+              to be a part of the Pilot Project for the HealthTrak medical history tracking
+              application. It is an exciting step in the digitalisation of Healthcare records
+              in Ireland, and I look forward to introducing our patients to the benefits of
+              this new tool.</p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+          <div class="avatar mx-auto">
+            <img src="https://unixtitan.net/images/healthcare-clipart-medical-team-3.png" class="rounded-circle z-depth-1"
+              alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">Dr Alice Doran</h5>
+          <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
+          <p class="grey-text">Having served many different communities around Ireland as a family
+              practitioner for the last ten years, I can see a real need in the Irish Healthcare System
+              for HealthTrak. I look forward to testing it out during this exceptional Pilot project.
+  </p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-md-0 mb-5">
+          <div class="avatar mx-auto">
+            <img src="http://www.cpsofnj.com/wp-content/uploads/2014/07/doc2.jpg" class="rounded-circle z-depth-1"
+              alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">Dr Kenneth Peterson</h5>
+          <p class="text-uppercase blue-text"><strong>Family Practitioner</strong></p>
+          <p class="grey-text">As a family practitioner in Ireland for the last fifteen years, I specialise in early childhood diagnostics and have been with the Grange Medical Centre for the last five years. We have an amazing team of healthcare experts serving the County Clare community.
+            </p>
+  
+        </div>
+        <!-- Grid column -->
+  
+  
+  
+      </div>
+      <!-- Grid row -->
+  
+    </section>
+    <!-- Section: Team v.1 -->
+  
+  
+  
+  
+  
+  

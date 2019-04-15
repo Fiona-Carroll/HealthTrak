@@ -1,54 +1,105 @@
-<div class="container">
+<h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="usertype">User type</label>
+        <input type="text" formControlName="usertype" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.usertype.errors }" />
+        <div *ngIf="submitted && f.usertype.errors" class="invalid-feedback">
+            <div *ngIf="f.usertype.errors.required">User type is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+
+
+
+
+
+
+
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-12">
       <!-- Material form register -->
-      <hr>
+      <!-- <hr>
       <div class="card">
 
         <h5 class="card-header info-color white-text text-center py-4">
             <strong>Register to join HealthTrak</strong>
-        </h5>
+        </h5> -->
 
         <!--Card content-->
-        <div class="card-body px-lg-10 pt-0">
+        <!-- <div class="card-body px-lg-10 pt-0"> -->
 
             <!-- Form -->
-            <form class="text-center" style="color: #757575;">
+            <!-- <form class="text-center" style="color: #757575;">
 
                 <div class="form-row">
                     <div class="col">
                         <!-- First name -->
-                        <div class="md-form">
+                        <!-- <div class="md-form">
                             <input type="text" id="materialRegisterFormFirstName" class="form-control">
                             <label for="materialRegisterFormFirstName">First name</label>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col"> --> -->
                         <!-- Last name -->
-                        <div class="md-form">
+                        <!-- <div class="md-form">
                             <input type="email" id="materialRegisterFormLastName" class="form-control">
                             <label for="materialRegisterFormLastName">Last name</label>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- E-mail -->
-                <div class="md-form mt-0">
+                <!-- <div class="md-form mt-0">
                     <input type="email" id="materialRegisterFormEmail" class="form-control">
                     <label for="materialRegisterFormEmail">E-mail</label>
-                </div>
+                </div> -->
 
                 <!-- Password -->
-                <div class="md-form">
+                <!-- <div class="md-form">
                     <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
                     <label for="materialRegisterFormPassword">Password</label>
                     <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         At least 8 characters and 1 digit
                     </small>
-                </div>
+                </div> -->
 
                 <!-- Phone number -->
-                <div class="md-form">
+                <!-- <div class="md-form">
                     <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
                     <label for="materialRegisterFormPhone">Phone number</label>
                     <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
@@ -56,20 +107,20 @@
                     </small>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <!-- Sign up button -->
-                    <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Login</button>
-                  </div>
-                  <div class="col-md-6">
-                    <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Sign Up</button>
+                <div class="row"> -->
+                  <!-- <div class="col-md-6">
+                    <!- Sign up button -->
+                    <!-- <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Login</button>
+                  </div>  -->
+                  <!-- <div class="col-md-12">
+                    <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Register</button>
                   </div>
                 </div>
-              </form>
+              </form> -->
             <!-- Form -->
-          </div>
-        </div>
+          <!-- </div>
+        </div> -->
       <!-- Material form register -->
-      </div>
+      <!-- </div>
     </div>
-</div>
+</div> --> 

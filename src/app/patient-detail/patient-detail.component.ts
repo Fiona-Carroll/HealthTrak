@@ -15,7 +15,7 @@ export class PatientDetailComponent implements OnInit {
   public isRead: boolean = false;
   public patientId: string;
   private patientDetail : Patient = new Patient();
-  // public patientIdd : string = "fsfsfsd";
+  
 
   constructor(public rest:HealthtrakService, private _Activatedroute:ActivatedRoute, private router: Router) {
     this.patientId=_Activatedroute.snapshot.params['patientId'];
@@ -36,7 +36,7 @@ export class PatientDetailComponent implements OnInit {
     this.patientDetail =  patientDetail.patient as Patient;
     this.patientId = this.patientDetail.Patient_Id as string ;
     console.log(this.patientDetail);
-    //this.products = data;
+    
     });
   }
 
@@ -48,7 +48,7 @@ export class PatientDetailComponent implements OnInit {
     }
   }
 
-  public changeToEditionMode(){
+  public changeToEditMode(){
     this.isUpdate = true;
     this.isCreate = false;
     this.isRead = false;
@@ -60,7 +60,6 @@ export class PatientDetailComponent implements OnInit {
         console.log("It works");
         this.patientDetail =  patientDetail.patient as Patient;
         console.log(patientDetail);
-          // //this.products = data;
           this.router.navigate(['/patient']);
           alert("Patient created successfully");
         });
@@ -72,7 +71,6 @@ export class PatientDetailComponent implements OnInit {
         console.log(patientDetail);
         this.patientDetail =  patientDetail.patient as Patient;
         console.log(patientDetail);
-          // //this.products = data;
           this.router.navigate(['/patient']);
           alert("Patient updated successfully");
         });
@@ -80,7 +78,7 @@ export class PatientDetailComponent implements OnInit {
 
 
   ngOnInit() {
-    //this.patientIdd="";
+    
   }
 
 

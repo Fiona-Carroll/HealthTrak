@@ -12,30 +12,30 @@
     <p class="h4 mb-4">Appointment Details</p>
 
       <div class="md-form">
-          <input type="date" id="form7" class="md-datearea md-datearea-auto form-control" mdbInput  [(ngModel)]="appointmentDetail.Appointment_Date" name="Appointment_Date">
+          <input type="date" id="form7" class="md-datearea md-datearea-auto form-control" mdbInput  [(ngModel)]="appointmentDetail.Appointment_Date" name="Appointment_Date, true">
           <label for="form7"></label>
       </div>
 
       <div class="md-form">
-        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Symptoms" name="Appointment_Symptoms"></textarea>
+        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Symptoms" name="Appointment_Symptoms, true"></textarea>
         <label for="form7">Symptoms</label>
       </div>
 
           <div class="md-form">
-            <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Diagnosis" name="Appointment_Diagnosis"></textarea>
+            <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Diagnosis" name="Appointment_Diagnosis, true"></textarea>
             <label for="form7">Diagnosis</label>
           </div>
 
 
 
         <div class="md-form">
-            <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Treatment" name="Appointment_Treatment"></textarea>
+            <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Treatment" name="Appointment_Treatment, true"></textarea>
             <label for="form7">Treatment</label>
         </div>
 
 
         <div class="md-form">
-            <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Prescription" name="Appointment_Prescription"></textarea>
+            <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Prescription" name="Appointment_Prescription, true"></textarea>
             <label for="form7">Prescription</label>
           </div>
 
@@ -43,42 +43,42 @@
 
 
             <div class="md-form">
-                <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Other_Details" name="Appointment_Other_Details"></textarea>
+                <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Other_Details" name="Appointment_Other_Details, true"></textarea>
                 <label for="form7">Other Details</label>
               </div>
 
               <div class="md-form">
-                  <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Medical_Certificate" name="Appointment_Medical_Certificate"></textarea>
+                  <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Medical_Certificate" name="Appointment_Medical_Certificate, true"></textarea>
                   <label for="form7">Medical Certificate</label>
                 </div>
 
                 <div class="md-form">
-                    <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Vaccination" name="Appointment_Vaccination"></textarea>
+                    <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Vaccination" name="Appointment_Vaccination, true"></textarea>
                     <label for="form7">Vaccination</label>
                   </div>
 
     <div class="md-form">
-        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Lab_Tests" name="Appointment_Lab_Tests"></textarea>
+        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Lab_Tests" name="Appointment_Lab_Tests, true"></textarea>
         <label for="form7">Lab Tests</label>
     </div>
 
     <div class="md-form">
-        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Hospitalisation" name="Appointment_Hospitalisation"></textarea>
+        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Hospitalisation" name="Appointment_Hospitalisation, true"></textarea>
         <label for="form7">Hospitalisation</label>
     </div>
 
     <div class="md-form">
-        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Specialist_Referral" name="Appointment_Specialist_Referral"></textarea>
+        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Specialist_Referral" name="Appointment_Specialist_Referral true"></textarea>
         <label for="form7">Specialist Referral</label>
     </div>
 
     <div class="md-form">
-        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Patient_Id" name="Appointment_Patient_Id"></textarea>
+        <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Patient_Id" name="Appointment_Patient_Id, true"></textarea>
         <label for="form7">Associated Patient Id</label>
     </div>
 
     <div class="md-form">
-      <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Doctor_Id" name="Appointment_Doctor_Id"></textarea>
+      <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput [(ngModel)]="appointmentDetail.Appointment_Doctor_Id" name="Appointment_Doctor_Id, true"></textarea>
       <label for="form7">Associated Doctor Id</label>
     </div>
   </form>
@@ -90,7 +90,7 @@
   <div class = "row">
     <div class = "col-md-6">
         <!-- Save button -->
-    <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" (click)="createAppointment()" mdbWavesEffect>Save</button>
+    <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" (click)="createAppointment()" [disabled]="isCreate||isUpdate||readMode" mdbWavesEffect>Save</button>
     </div>
     <div class = "col-md-6">
       <!-- Cancel button -->

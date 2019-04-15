@@ -1,34 +1,74 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-//import { getMaxListeners } from 'cluster';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
+import { AlertService } from '../alert.service';
+import { AuthenticationService } from '../authentication.service';
 
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
-})
+@Component({templateUrl: 'login.component.html'})
 export class LoginComponent implements OnInit {
-  doctorEmail:string="doctor@gmail.com";
-  doctorPassword:string="12345";
-  patientEmail:string="patient@gmail.com";
-  patientPassword:string="12345";
-  user:string="";
-  password:string="";
+    loginForm: FormGroup;
+    loading = false;
+    submitted = false;
+    returnUrl: string;
 
-  constructor() { }
+    constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService
+    ) {
+        // redirect to home if already logged in
+        if (this.authenticationService.currentUserValue) {
+          console.log('it works: '+this.authenticationService.currentUserValue.usertype);
+          if(this.authenticationService.currentUserValue.usertype == 'doctor') {
+            alert('doctor login successful!');
+            this.router.navigate(['/doctor-detail']);
+          }
+          if(this.authenticationService.currentUserValue.usertype == 'patient') {
+            alert('patient login successful!');
+            this.router.navigate(['/patient-detail']);
+          }
+          if(this.authenticationService.currentUserValue.usertype == 'admin') {
+            alert('admin login successful!');
+            this.router.navigate(['/doctor']);
+          }
+        }
+    }
 
+    ngOnInit() {
+        this.loginForm = this.formBuilder.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required]
+        });
 
+        // get return url from route parameters or default to '/'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    }
 
-  ngOnInit() {
-  }
-  myFunc(){
-    console.log("function called");
-}
+    // convenience getter for easy access to form fields
+    get f() { return this.loginForm.controls; }
 
-signIn(){
-  //if doctor
-}
+    onSubmit() {
+        this.submitted = true;
 
+        // stop here if form is invalid
+        if (this.loginForm.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        this.authenticationService.login(this.f.username.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading = false;
+                });
+    }
 }

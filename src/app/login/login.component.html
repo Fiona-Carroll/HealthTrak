@@ -1,3 +1,30 @@
+<!-- <h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Login</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+</form> -->
+
+
+
+
+
 <div class = "container">
 
       <!-- Material form login -->
@@ -11,7 +38,7 @@
         <div class="card-body px-lg-10 pt-0">
 
           <!-- Form -->
-          <form class="text-center" style="color: #757575;">
+          <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="text-center"  autocomplete="off" style="color: #757575;">
 
             <!-- Email -->
             <!--<div class="md-form">
@@ -19,42 +46,50 @@
               <label for="materialLoginFormEmail">E-mail</label>
             </div>-->
 
-            <div class="md-form">
+            <!-- <div class="md-form">
                 <input type="email" [(ngModel)]="user" class="form-control" id="basicExample" mdbInputDirective name="user">
                 <label for="basicExample">Type your email</label>
-            </div>
+            </div> -->
 
-            <div class="md-form">
-                <input type="email" [(ngModel)]="password"  class="form-control" id="basicExample" mdbInputDirective name="password">
-                <label for="basicExample">Type your Password</label>
-            </div>
-
-            <!-- Password -->
-            <!--<div class="md-form">
-              <input type="password" id="materialLoginFormPassword" class="form-control">
-              <label for="materialLoginFormPassword">Password</label>
-            </div>-->
-
-            <div class="d-flex justify-content-around">
-              <div>
-                <!-- Remember me -->
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-                  <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+            <div class="form-group md-form">
+                <input type="text" formControlName="username" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <label for="username">Username</label>
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
                 </div>
-              </div>
-              <div>
-                <!-- Forgot password -->
-                <a href="">Forgot password?</a>
-              </div>
             </div>
+
+            <!-- <div class="md-form">
+                <input type="password" [(ngModel)]="password"  class="form-control" id="basicExample" mdbInputDirective name="password">
+                <label for="basicExample">Type your Password</label>
+            </div> -->
+
+            <div class="form-group md-form">
+                <input type="password" formControlName="password" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <label for="password">Password</label>
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+            </div>
+
+            <!-- Password
+            <div class="md-form">
+              <input type="password" id="materialLoginFormPassword" class="form-control" $password = new Element\Password('password');
+
+              <label for="materialLoginFormPassword">Password</label>
+
+            </div> -->
 
             <!-- Sign in button -->
-            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click) = "myFunc()">Sign in</button>
-            <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Login</button>
+            <!-- <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" (click) = "myFunc()">Sign in</button> -->
+            <!-- <button  mdbWavesEffect routerLink="/appointment" routerLinkActive="active">Login</button> -->
 
-            <input ng-click="check(profileForm.$valid)" name="Login"
-             id="Login" value="Save" class="Login" type="Login">
+            <div class="form-group">
+
+                <button [disabled]="loading" class="btn btn-primary my-4" mdbBtn block="true" gradient="aqua" rounded="true">Login</button>
+                <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <!-- <a routerLink="/register" class="btn btn-link">Register</a> -->
+</div>
 
 
             <!-- Register -->
@@ -72,12 +107,12 @@
       </div>
       <!-- Material form login -->
 
-      <div>
+      <!-- <div>
         <button btn btn-primary (click)="myFunc()">Login</button>
       </div>
 
       <input ng-click="check(profileForm.$valid)" name="Login"
-             id="Login" value="Save" class="Login" type="Login">
+             id="Login" value="Save" class="Login" type="Login"> -->
 
 
 
