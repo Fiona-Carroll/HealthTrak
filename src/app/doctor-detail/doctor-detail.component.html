@@ -1,21 +1,21 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col-md-3">
+    <div class = "col-md-6" *ngIf="!isPatientUser && !isDoctorUser">
       <!-- Back button -->
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/doctor" routerLinkActive="active">Back</button>
     </div>
-    <div class = "col-md-3">
+    <div class = "col-md-6" *ngIf="isPatientUser">
       <!-- View Patients -->
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/patient', doctorDetail.Doctor_Id]" routerLinkActive="active">View Patients</button>
     </div>
-    <div class = "col-md-3">
+    <!-- <div class = "col-md-4">
       <!-- View Appointments List -->
-      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/appointment" routerLinkActive="active">View Appointment List</button>
-    </div>
-    <div class = "col-md-3">
+      <!-- <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/appointment" routerLinkActive="active">View Appointment List</button>
+    </div> -->
+    <!-- <div class = "col-md-3">
       <!-- Logout -->
-      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Logout</button>
-    </div>
+      <!-- <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Logout</button>
+    </div> -->
   </div>
 
   <div class = "row">
@@ -44,14 +44,14 @@
               </div>
             </div>
 
-            
+
 
                <!-- Gender -->
         <input type="gender" id="defaultRegisterFormGender" class="form-control" placeholder="Gender" aria-describedby="defaultRegisterFormGenderHelpBlock" [(ngModel)]="doctorDetail.Doctor_Gender" name="Doctor_Gender" [disabled]="isRead">
           <small id="defaultRegisterFormGenderHelpBlock" class="form-text text-muted mb-4">
             Gender
           </small>
-          
+
 
 
 
@@ -79,21 +79,21 @@
         </small>
 
 
-        
+
                   <!-- Contact Number -->
                   <input type="text" id="defaultRegisterFormContactNumber" class="form-control" placeholder="Contact Number" aria-describedby="defaultRegisterFormContactNumberHelpBlock" [(ngModel)]="doctorDetail.Doctor_Contact_Number" name="Doctor_Contact_Number" [disabled]="isRead">
                   <small id="defaultRegisterFormContactNumberHelpBlock" class="form-text text-muted mb-4">
                       Contact Number
                     </small>
-        
 
-          
+
+
                 <!-- Other Details -->
                   <input type="text" id="defaultRegisterFormOtherDetails" class="form-control" placeholder="Other Details" aria-describedby="defaultRegisterFormOtherDetailsHelpBlock" [(ngModel)]="doctorDetail.Doctor_Other_Details" name="Doctor_Other_Details" [disabled]="isRead">
                   <small id="defaultRegisterFormOtherDetailsHelpBlock" class="form-text text-muted mb-4">
                       Other Details
                     </small>
-            
+
 
 
 

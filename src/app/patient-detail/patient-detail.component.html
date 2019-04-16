@@ -1,17 +1,17 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col-md-3">
+    <div *ngIf="isPatientUser" class = "col-md-4">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/patient" routerLinkActive="active">Back</button>
     </div>
-    <div class = "col-md-3">
-      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/appointment', patientDetail.Patient_Id]" routerLinkActive="active">View My Appointments</button>
+    <div class = "col-md-4">
+      <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/appointment', patientDetail.Patient_Id]" routerLinkActive="active">View Appointments</button>
     </div>
-    <div class = "col-md-3">
+    <div class = "col-md-4">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [routerLink]="['/doctor-detail', patientDetail.Patient_Doctor_Id, true]" routerLinkActive="active">View My Doctor</button>
     </div>
-    <div class = "col-md-3">
+    <!-- <div class = "col-md-3">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Logout</button>
-    </div>
+    </div> -->
   </div>
   <div class = "row">
     <div class = "col-md-12">
@@ -39,14 +39,14 @@
             </div>
           </div>
 
-          
-              
+
+
                 <!-- Gender -->
                 <input type="gender" id="defaultRegisterFormGender" class="form-control" placeholder="Gender" aria-describedby="defaultRegisterFormGenderHelpBlock" [(ngModel)]="patientDetail.Patient_Gender" name="Patient_Gender" [disabled]="isRead">
                 <small id="defaultRegisterFormGenderHelpBlock" class="form-text text-muted mb-4">
                   Gender
                 </small>
-              
+
 
         <div class="form-row mb-4">
         <div class = "col">

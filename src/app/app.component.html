@@ -58,101 +58,63 @@
 <title>
   <h1>'Welcome to HealthTrak!'</h1>
 </title>
-<!-- Grid row -->
+
 <!-- Grid row -->
 <div class="row">
 
     <!-- Grid column -->
     <div class="col-md-12">
-
-      <ul class="nav aqua-gradient py-4 mb-r font-weight-bold z-depth-1">
-        <li class="nav-item">
-          <a class="nav-link active white-text" href="#">HEALTHTRAK</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/doctor" routerLinkActive="active" class="nav-link white-text">Doctors</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/patient" routerLinkActive="active" class="nav-link white-text">Patients</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/appointment" routerLinkActive="active" class="nav-link white-text">Appointments</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/patient-detail" routerLinkActive="active" class="nav-link white-text">Patient Detail</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/doctor-detail" routerLinkActive="active" class="nav-link white-text">Doctor Detail</a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="/appointment-detail" routerLinkActive="active" class="nav-link white-text">Appointment Detail</a>
-        </li>
-        <li class="nav-item">
-          <!-- <a routerLink="/" routerLinkActive="active" class="nav-link white-text">Logout</a> -->
-          <a class="nav-link white-text" (click)="logout()">Logout</a>
-        </li>
-      </ul>
-
-
+      <links class="linksClass">
+        <ul class="nav aqua-gradient py-4 mb-r font-weight-bold z-depth-1">
+          <li class="nav-item">
+            <a class="nav-link active white-text" href="#">HEALTHTRAK</a>
+          </li>
+          <div *ngIf="isAdminUser">
+            <li class="nav-item">
+              <a routerLink="/doctor" routerLinkActive="active" class="nav-link white-text">Doctors</a>
+            </li>
+          </div>
+          <div *ngIf="isAdminUser">
+            <li class="nav-item">
+              <a routerLink="/patient" routerLinkActive="active" class="nav-link white-text">Patients</a>
+            </li>
+          </div>
+          
+          
+          
+          
+          <!--<li class="nav-item">
+            <a routerLink="/patient-detail" routerLinkActive="active" class="nav-link white-text">Patient Detail</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/doctor-detail" routerLinkActive="active" class="nav-link white-text">Doctor Detail</a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="/appointment-detail" routerLinkActive="active" class="nav-link white-text">Appointment Detail</a>
+          </li> -->
+          <li class="nav-item mr-auto">
+            <!-- <a routerLink="/" routerLinkActive="active" class="nav-link white-text">Logout</a> -->
+            <a class="nav-link white-text" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </links>
+      
     </div>
     <!-- Grid column -->
 
   </div>
   <!-- Grid row -->
 
-  <!-- Card -->
-  <!-- <mdb-card> -->
-      <!-- <div class="view rgba-white-slight waves-light" mdbWavesEffect> -->
-        <!-- Card img -->
-        <!-- <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img>
-        <a>
-          <div class="mask"></div>
-        </a>
-      </div> -->
-      <!--Card content-->
-      <!-- <mdb-card-body> -->
-        <!--Title-->
-        <!-- <mdb-card-title>
-          <h4>View Appointments</h4>
-        </mdb-card-title> -->
-
-        <!--Text-->
-        <!-- <mdb-card-text> Click here to view a list of your appointments
-        </mdb-card-text>
-
-        <a href="#" mdbBtn color="primary" mdbWavesEffect>Click me</a>
-      </mdb-card-body>
-    </mdb-card> -->
-    <!-- Card -->
-
-
-
-<!-- nav -->
-<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
-    </div>
-</nav> -->
-
-<!-- main app container -->
-<!-- <div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 offset-sm-3">
-                <alert></alert>
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
 
 <!-- Main -->
 <main class="mainAppClass">
-
-  <div class="container">
+  <div *ngIf="currentUser" class="mx-auto">
+    <p class="text-center mt-3">
+      Welcome {{currentUser.firstName}}
+    </p>
+  </div>
+  <div class="container myContainer">
+    <hr>
       <alert></alert>
     <router-outlet></router-outlet>
 

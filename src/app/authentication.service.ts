@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { User } from './model/user-model';
 
+// The @Injectable decorator marks it as a service that can be injected
+// But an Angular dependency injector must be configured with a provider of that service
+// In this case 'root' is where the service is provided
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;

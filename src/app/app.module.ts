@@ -38,18 +38,18 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
     DoctorDetailComponent,
     AppointmentDetailComponent,
     AlertComponent,
-  
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
     ],
     schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA ],
-  
+
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

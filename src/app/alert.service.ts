@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
+
+// The @Injectable decorator marks it as a service that can be injected
+// But an Angular dependency injector must be configured with a provider of that service
+// In this case 'root' is where the service is provided
 @Injectable({ providedIn: 'root' })
 export class AlertService {
     private subject = new Subject<any>();

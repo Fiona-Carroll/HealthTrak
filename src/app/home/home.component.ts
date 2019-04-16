@@ -6,7 +6,15 @@ import { User } from '../model/user-model';
 import { UserService } from '../user.service';
 import { AuthenticationService } from '../authentication.service';
 
+// Components are the most basic building block of a UI in an Angular Application
+// An Angular Application is a tree of Angular Components
 @Component({ templateUrl: 'home.component.html' })
+
+// OnInIt is a lifecycle hook which gets called after the constructor is
+// called and all the variables have been initialised
+// Components must implement OnInIt in order to use it
+// OnDestroy() is another lifecycle hook which has a method ngOnDestroy()
+// It is called for cleanup logic when a component is destroyed
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User;
     currentUserSubscription: Subscription;

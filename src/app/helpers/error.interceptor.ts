@@ -5,6 +5,8 @@ import { catchError } from 'rxjs/operators';
 
 import { AuthenticationService } from '../authentication.service';
 
+// The @Injectable decorator marks it as a service that can be injected
+// But an Angular dependency injector must be configured with a provider of that service
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
     constructor(private authenticationService: AuthenticationService) {}

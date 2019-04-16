@@ -4,11 +4,14 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Appointment } from './model/appointment-model';
 
-
+// The @Injectable decorator marks it as a service that can be injected
+// But an Angular dependency injector must be configured with a provider of that service
+// In this case 'root' is where the service is provided
 @Injectable({
   providedIn: 'root'
 })
 export class HealthtrakService {
+  // reads from the Node.js with Express api
   readonly endpoint = 'http://localhost:5000';
   readonly httpOptions = {
     headers: new HttpHeaders({
@@ -73,7 +76,7 @@ getPatients(doctorId): Observable<any> {
     })
     );
 }
-  
+
 getDoctors(): Observable<any> {
   console.log(this.endpoint + '/doctor/get');
   return this.http.get(this.endpoint + '/doctor/get').pipe(

@@ -6,7 +6,12 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../alert.service';
 import { AuthenticationService } from '../authentication.service';
 
+// Components are the most basic building block of a UI in an Angular Application
+// An Angular Application is a tree of Angular Components
 @Component({templateUrl: 'login.component.html'})
+// OnInIt is a lifecycle hook which gets called after the constructor is
+// called and all the variables have been initialised
+// Components must implement OnInIt in order to use it
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
@@ -22,19 +27,18 @@ export class LoginComponent implements OnInit {
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
+          this.alertService.success("Logged in");
           console.log('it works: '+this.authenticationService.currentUserValue.usertype);
           if(this.authenticationService.currentUserValue.usertype == 'doctor') {
-            alert('doctor login successful!');
-            this.router.navigate(['/doctor-detail']);
+            this.router.navigate(['/doctor-detail',this.authenticationService.currentUserValue.pps]);
           }
           if(this.authenticationService.currentUserValue.usertype == 'patient') {
-            alert('patient login successful!');
-            this.router.navigate(['/patient-detail']);
+            this.router.navigate(['/patient-detail',this.authenticationService.currentUserValue.pps]);
           }
           if(this.authenticationService.currentUserValue.usertype == 'admin') {
-            alert('admin login successful!');
             this.router.navigate(['/doctor']);
           }
+          
         }
     }
 

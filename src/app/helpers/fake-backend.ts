@@ -3,6 +3,8 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
+// The @Injectable decorator marks it as a service that can be injected
+// But an Angular dependency injector must be configured with a provider of that service
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
 
@@ -27,6 +29,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     let user = filteredUsers[0];
                     let body = {
                         id: user.id,
+                        pps: user.pps,
                         username: user.username,
                         firstName: user.firstName,
                         lastName: user.lastName,

@@ -7,7 +7,13 @@ import { AlertService } from '../alert.service';
 import { UserService } from '../user.service';
 import { AuthenticationService } from '../authentication.service';
 
+// Components are the most basic building block of a UI in an Angular Application
+// An Angular Application is a tree of Angular Components
 @Component({templateUrl: 'register.component.html'})
+
+// OnInIt is a lifecycle hook which gets called after the constructor is
+// called and all the variables have been initialised
+// Components must implement OnInIt in order to use it
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
@@ -26,10 +32,12 @@ export class RegisterComponent implements OnInit {
         }
     }
 
+    // fields required in the register form
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
+            pps:      ['', Validators.required],
             username: ['', Validators.required],
             usertype: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]]

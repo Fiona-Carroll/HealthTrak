@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'doctor-detail', component: DoctorDetailComponent },
   { path: 'appointment-detail', component: AppointmentDetailComponent },
   { path: 'appointment-detail/:appointmentId', component: AppointmentDetailComponent },
+  { path: 'appointment-detail/:appointmentId/:readMode', component: AppointmentDetailComponent },
   { path: '', component: HomeComponent, canActivate: [AuthGuard] }
 
 ];

@@ -1,4 +1,4 @@
-<h2>Register</h2>
+<!-- <h2>Register</h2>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="firstName">First Name</label>
@@ -12,6 +12,13 @@
         <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
         <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
             <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="pps">PPS Number</label>
+        <input type="text" formControlName="pps" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pps.errors }" />
+        <div *ngIf="submitted && f.pps.errors" class="invalid-feedback">
+            <div *ngIf="f.pps.errors.required">PPS Number is required</div>
         </div>
     </div>
     <div class="form-group">
@@ -41,86 +48,128 @@
         <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
         <a routerLink="/login" class="btn btn-link">Cancel</a>
     </div>
-</form>
+</form> -->
 
-
-
-
-
-
-
-<!-- <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
+
       <!-- Material form register -->
-      <!-- <hr>
+      <hr>
       <div class="card">
 
         <h5 class="card-header info-color white-text text-center py-4">
             <strong>Register to join HealthTrak</strong>
-        </h5> -->
+        </h5>
 
         <!--Card content-->
-        <!-- <div class="card-body px-lg-10 pt-0"> -->
+         <div class="card-body px-lg-10 pt-0">
 
             <!-- Form -->
-            <!-- <form class="text-center" style="color: #757575;">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" autocomplete="off" class="text-center" style="color: #757575;">
 
                 <div class="form-row">
                     <div class="col">
                         <!-- First name -->
-                        <!-- <div class="md-form">
-                            <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                        <div class="md-form form-group">
                             <label for="materialRegisterFormFirstName">First name</label>
+                            <input type="text" id="materialRegisterFormFirstName" class="form-control" formControlName="firstName" mdbInputDirective class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col"> --> -->
-                        <!-- Last name -->
-                        <!-- <div class="md-form">
-                            <input type="email" id="materialRegisterFormLastName" class="form-control">
-                            <label for="materialRegisterFormLastName">Last name</label>
-                        </div>
-                    </div>
-                </div> -->
 
-                <!-- E-mail -->
-                <!-- <div class="md-form mt-0">
-                    <input type="email" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">E-mail</label>
-                </div> -->
+                        <!-- Last name -->
+                        <div class="md-form form-group">
+                            <label for="materialRegisterFormLastName">Last name</label>
+                            <input type="text" id="materialRegisterFormLastName" formControlName="lastName" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+
+                <!-- PPS Number -->
+                <div class="md-form form-group">
+                    <label for="materialRegisterFormPps">PPS Number (Id)</label>
+                    <input type="text" id="materialRegisterFormPps" formControlName="pps" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.pps.errors }" />
+                    <div *ngIf="submitted && f.pps.errors" class="invalid-feedback">
+                        <div *ngIf="f.pps.errors.required">PPS Number is required</div>
+                    </div>
+                </div>
+
+                <!-- User Type -->
+                <div class="md-form form-group">
+                    <input type="text" id="materialRegisterFormUsertype" formControlName="usertype" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.usertype.errors }" />
+                    <label for="materialRegisterFormUsertype">User type</label>
+                    <div *ngIf="submitted && f.usertype.errors" class="invalid-feedback">
+                        <div *ngIf="f.usertype.errors.required">User type is required</div>
+                    </div>
+                </div>
+
+                <!-- Username -->
+                <div class="md-form mt-0 form-group">
+                    <input type="text" autocomplete="false" id="materialRegisterFormUsername" formControlName="username" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <label for="materialRegisterFormUsername">Username</label>
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+
 
                 <!-- Password -->
-                <!-- <div class="md-form">
-                    <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                    <label for="materialRegisterFormPassword">Password</label>
-                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                        At least 8 characters and 1 digit
-                    </small>
+                <div class="md-form form-group">
+                    <input autocomplete="false" type="password" id="materialRegisterFormPassword" formControlName="password" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <label for="materialRegisterFormPassword">Password (min 6 characters)</label>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="form-group md-form">
+                    <input type="text" formControlName="username" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <label for="username">Username</label>
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
                 </div> -->
 
                 <!-- Phone number -->
-                <!-- <div class="md-form">
-                    <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-                    <label for="materialRegisterFormPhone">Phone number</label>
+                 <!-- <div class="md-form">
+                    <input autocomplete="false" type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                    <label for="materialRegisterFormPhone">Password</label>
                     <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
                         Optional - for two step authentication
                     </small>
-                </div>
+                </div> -->
 
-                <div class="row"> -->
-                  <!-- <div class="col-md-6">
-                    <!- Sign up button -->
-                    <!-- <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Login</button>
-                  </div>  -->
+                <!-- <div class="row"> -->
+                <!-- <div class="col-md-6">
+
+                    <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Login</button>
+                  </div> -->
+                  <!-- Register button -->
                   <!-- <div class="col-md-12">
                     <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/" routerLinkActive="active">Register</button>
                   </div>
+                </div> -->
+
+                <!-- Register button -->
+                <div class="form-group">
+                    <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect [disabled]="loading">Register</button>
+                    <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    <a routerLink="/login" class="btn btn-link">Cancel</a>
                 </div>
-              </form> -->
+
+
+              </form>
             <!-- Form -->
-          <!-- </div>
-        </div> -->
+          </div>
+        </div>
       <!-- Material form register -->
-      <!-- </div>
+       </div>
     </div>
-</div> --> 
+</div>

@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
+    <!-- <div class="col-md-3">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/patient" routerLinkActive="active">View Patients</button>
-    </div>
-    <div class="col-md-3">
+    </div> -->
+    <div class="col-md-3" *ngIf="isPatientUser">
       <button mdbBtn type="button" block="true" gradient="aqua" class="my-4" rounded="true" type="submit" mdbWavesEffect routerLink="/appointment-detail" routerLinkActive="active">Create New Appointment</button>
     </div>
   </div>
@@ -31,7 +31,7 @@
             <!-- <th>Medical Certificate</th>
             <th>Vaccination</th>
             <th>Lab Tests</th>
-            <th>Hospitalisation</th> 
+            <th>Hospitalisation</th>
             <th>Specialist Referral</th>  -->
             <th>Patient Id</th>
             <th>Doctor Id</th>
@@ -39,20 +39,20 @@
         </thead>
         <tbody>
           <tr mdbTableCol *ngFor="let appointment of appointments">
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Id}}</td>
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Date}}</td>
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Symptoms}}</td>
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Diagnosis}}</td>
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Treatment}}</td>
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Prescription}}</td>
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Other_Details}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Id}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id , true]"> {{appointment.Appointment_Date}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Symptoms}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Diagnosis}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Treatment}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Prescription}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Other_Details}}</td>
             <!-- <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Medical_Certificate}}</td>
             <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Vaccination}}></td>
             <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Lab_Tests}}</td>
             <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Hospitalisation}}</td>
             <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Specialist_Referral}}</td> -->
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Patient_Id}}</td>
-            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id]"> {{appointment.Appointment_Doctor_Id}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Patient_Id}}</td>
+            <td [routerLink]="['/appointment-detail',appointment.Appointment_Id, true]"> {{appointment.Appointment_Doctor_Id}}</td>
           </tr>
         </tbody>
       </table>

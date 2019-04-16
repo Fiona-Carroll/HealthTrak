@@ -53,9 +53,9 @@
 
             <div class="form-group md-form">
                 <input type="text" formControlName="username" class="form-control" mdbInputDirective [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                <label for="username">Username</label>
+                <label for="username">Username (Email)</label>
                 <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">Username is required</div>
+                    <div *ngIf="f.username.errors.required">Username (Email) is required</div>
                 </div>
             </div>
 
