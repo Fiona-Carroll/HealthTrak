@@ -1,45 +1,45 @@
 <div class="container-fluid">
   <div class="row">
-        <div class="col-md-12">
-          <div class="jumbotron">
-            <i class="fa fa-heartbeat" aria-hidden="true"></i>
-            DOCTORS TABLE
-          </div>
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <i class="fa fa-heartbeat" aria-hidden="true"></i>
+          DOCTORS TABLE
         </div>
       </div>
+  </div>
 
 
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-bordered table-striped w-auto" mdbTable striped="true"  responsive="true">
-            <thead class="tableHead">
-              <tr>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Gender</th>
-                  <th>Date of Birth</th>
-                  <th>Age</th>
-                  <th>Address</th>
-                  <th>Contact Number</th>
-                  <th>Other Details</th>
-              </tr>
-            </thead>
-            <tbody class="tableBody">
-              <tr mdbTableCol *ngFor="let doctor of doctors">
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Id}}</td>
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Name}}</td>
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Gender}}</td>
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Date_Of_Birth}}</td>
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Age}}</td>
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Address}}</td>
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Contact_Number}}</td>
-                <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Other_Details}}</td>
-              </tr>
-            </tbody>
-          </table>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped w-auto" mdbTable striped="true"  responsive="true">
+          <thead class="tableHead">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Contact Number</th>
+                <th>Other Details</th>
+            </tr>
+          </thead>
+          <tbody class="tableBody">
+            <tr mdbTableCol *ngFor="let doctor of doctors">
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Id}}</td>
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Name}}</td>
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Gender}}</td>
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Date_Of_Birth}}</td>
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Age}}</td>
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Address}}</td>
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Contact_Number}}</td>
+              <td [routerLink]="['/doctor-detail',doctor.Doctor_Id]"> {{doctor.Doctor_Other_Details}}</td>
+            </tr>
+          </tbody>
+        </table>
     </div>
   </div>
+</div>
 
 
     <!-- Section: Team v.1 -->
@@ -47,8 +47,8 @@
 
       <!-- Section heading -->
       <h2 class="h1-responsive font-weight-bold my-5">Our amazing team</h2>
-      <!-- Section description -->
-      <p class="grey-text w-responsive mx-auto mb-5">Here at the Grange Medical Centre we have an expert clinic with an amazing team of General Practitioners and Medical Healthcare Experts who are among the first clinics in Ireland to use the HealthTrak System in Ireland.
+        <!-- Section description -->
+        <p class="grey-text w-responsive mx-auto mb-5">Here at the Grange Medical Centre we have an expert clinic with an amazing team of General Practitioners and Medical Healthcare Experts who are among the first clinics in Ireland to use the HealthTrak System in Ireland.
         </p>
 
       <!-- Grid row -->
